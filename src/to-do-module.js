@@ -7,8 +7,6 @@ class ToDoList {
     }
 }
 
-
-
 export {
     ToDoList
 }
