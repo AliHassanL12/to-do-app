@@ -10,10 +10,18 @@ class ToDoList {
     setToDoComplete() {
         setToDoComplete(this);
     }
+
+    changeToDoPriority() {
+        changeToDoPriority(this, value);
+    }
 }
 
 function setToDoComplete(instance) {
     instance.complete = true;
+}
+
+function changeToDoPriority(instance) {
+    instance.priority = value;
 }
 
 export {
