@@ -5,21 +5,18 @@ class Project {
     }
 
     addToProject(toDoList) {
-        projectAdder.addToProject.call(this, toDoList);
+       addToProject(this, toDoList);
+       console.log(this.projectItems);
     }
 }
 
-const projectAdder = (function(){
-    function addToProject(toDoList) {
-        this.projectItems.push(toDoList);
-    }
-    return {
-        addToProject
-    }
-})()
+function addToProject(project, toDoList) {
+    project.projectItems.push(toDoList);
+}
+
+
 
 
 export {
     Project,
-    projectAdder
 }
