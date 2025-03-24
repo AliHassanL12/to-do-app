@@ -4,7 +4,16 @@ class ToDoList {
         this.description = description;
         this.dueDate = dueDate; 
         this.priority = priority;
+        this.complete = null;
     }
+
+    setToDoComplete() {
+        setToDoComplete(this);
+    }
+}
+
+function setToDoComplete(instance) {
+    instance.complete = true;
 }
 
 export {
