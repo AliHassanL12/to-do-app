@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+}
+.header {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    padding: 0 10px;
+    height: 10%;
+    background-color: #6d8ad8;
+}
+.listIcon {
+    height: 50px;
+    padding: 0 10px;
+}
+
