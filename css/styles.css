@@ -29,7 +29,8 @@
 .sidebar {
     flex-basis: 250px;
     background-color: #D3D3D3;
-    padding: 30px;
+    padding: 20px;
+    font-size: 25px;
 }
 .projectView {
     flex: 3 1 0;
