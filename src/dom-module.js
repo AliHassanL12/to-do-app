@@ -8,6 +8,7 @@ class UserInterface {
 
 function createUserInterface() {
     createAppHeader();
+    createApplication();
 }
 
 function createAppHeader() {
@@ -22,6 +23,37 @@ function createAppHeader() {
     header.appendChild(listIconImage);
 }
 
+function createApplication() {
+    createAppContent();
+    createNavigationSidebar();
+    createProjectView();
+}
+
+function createAppContent() {
+    const appContainer = document.querySelector('.container');
+    const appMainContentContainer = document.createElement('div');
+    appMainContentContainer.classList.add('mainContentContainer');
+    appContainer.appendChild(appMainContentContainer);
+}
+
+function createNavigationSidebar() {
+    const appMainContentContainer = document.querySelector('.mainContentContainer');
+    const sidebar = document.createElement('div');
+    sidebar.classList.add('sidebar');
+    appMainContentContainer.appendChild(sidebar);
+
+    const homeLink = document.createElement('a')
+    homeLink.textContent = 'Home';
+    sidebar.appendChild(homeLink);
+}
+
+
+function createProjectView() {
+    const appMainContentContainer = document.querySelector('.mainContentContainer');
+    const projectView = document.createElement('div');
+    projectView.classList.add('projectView');
+    appMainContentContainer.appendChild(projectView);
+}
 
 export {
     UserInterface
