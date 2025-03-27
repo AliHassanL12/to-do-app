@@ -8,6 +8,10 @@ class Project {
        addToProject(this, toDoList);
        console.log(this.projectItems);
     }
+
+    get listItems() {
+        return this.projectItems;
+    }
 }
 
 function addToProject(project, toDoList) {

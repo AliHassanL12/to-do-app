@@ -8,3 +8,4 @@ defaultProject.addToProject(toDo);
 
 toDo.setToDoComplete();
 UserInterface.createUserInterface();
+UserInterface.openProjectOnUI(defaultProject.listItems);

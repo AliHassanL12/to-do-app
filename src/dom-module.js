@@ -1,14 +1,25 @@
 import '../css/styles.css';
 import listIconPath from '../images/list.png';
+import { ProjectViewer } from './project-viewer';
 class UserInterface {
     static createUserInterface() {
         createUserInterface();
+    }
+
+    static openProjectOnUI(arr) {
+        ProjectViewer.openProjectOnUI(arr);
     }
 }
 
 function createUserInterface() {
     createAppHeader();
     createApplication();
+}
+
+function createApplication() {
+    createAppContent();
+    createNavigationSidebar();
+    createProjectView();
 }
 
 function createAppHeader() {
@@ -23,11 +34,6 @@ function createAppHeader() {
     header.appendChild(listIconImage);
 }
 
-function createApplication() {
-    createAppContent();
-    createNavigationSidebar();
-    createProjectView();
-}
 
 function createAppContent() {
     const appContainer = document.querySelector('.container');
