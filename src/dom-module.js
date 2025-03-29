@@ -1,6 +1,6 @@
 import '../css/styles.css';
 import listIconPath from '../images/list.png';
-import { ProjectViewer } from './project-viewer';
+
 class UserInterface {
     static createUserInterface() {
         createUserInterface();
@@ -11,6 +11,25 @@ class UserInterface {
     }
 }
 
+class ProjectViewer {
+    static openProjectOnUI(arr) {
+        const projectView = document.querySelector('.projectView');
+        for (let i = 0; i < arr.length; i++) {
+            const container = document.createElement('div');
+            container.classList.add('toDoContainer');
+            container.textContent = `${arr[0].title}`
+            projectView.appendChild(container);
+            
+        }
+    }
+}
+
+
+class DOMToDo {
+    displayToDo() {
+
+    }
+}
 function createUserInterface() {
     createAppHeader();
     createApplication();
