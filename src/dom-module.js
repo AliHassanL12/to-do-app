@@ -17,7 +17,11 @@ class ProjectViewer {
         for (let i = 0; i < arr.length; i++) {
             const container = document.createElement('div');
             container.classList.add('toDoContainer');
-            container.textContent = `${arr[0].title}`
+            container.textContent = `${arr[0].title}`;
+            const detailButton = document.createElement('button');
+            detailButton.classList.add('detailButton');
+            detailButton.textContent = 'Details';
+            container.appendChild(detailButton)
             projectView.appendChild(container);
             
         }
