@@ -20,6 +20,17 @@ class ProjectViewer {
 
             const priorityStripe = document.createElement('div');
             priorityStripe.classList.add('priorityStripe');
+            switch(arr[0].priority) {
+                case 'high':
+                    priorityStripe.classList.add('high');
+                    break;
+                case 'medium':
+                    priorityStripe.classList.add('medium');
+                    break;
+                case 'low':
+                    priorityStripe.classList.add('low');
+                    break;
+            }
 
             const title = document.createElement('p');
             title.textContent = `${arr[0].title}`;

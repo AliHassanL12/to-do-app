@@ -60,9 +60,17 @@ a:active {
 }
 .priorityStripe {
     position: absolute;
-    background-color: red;
     top: 0px;
     left: 0px;
     height: 100%;
-    width: 2px;
+    width: 3px;
+}
+.priorityStripe.low {
+    background-color: rgb(83, 173, 83);
+}
+.priorityStripe.medium {
+    background-color: rgb(242, 161, 10);
+}
+.priorityStripe.high {
+    background-color: rgb(193, 13, 13);
 }
