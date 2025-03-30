@@ -28,18 +28,29 @@
 }
 .sidebar {
     flex-basis: 250px;
-    background-color: #D3D3D3;
+    background-color: #f2efef;
     padding: 20px;
     font-size: 25px;
 }
 .projectView {
+    padding: 10px;
     flex: 3 1 0;
 }
 a:hover {
     cursor: pointer;
     color: #3f4147;
 }
-
 a:active {
     color: rgb(99, 99, 99);
+}
+.toDoContainer {
+    display: flex;
+    padding: 10px;
+    background-color: #f2efef;
+}
+.detailButton {
+    margin-left: auto;
+}
+.checkbox {
+    margin-right: 10px;
 }

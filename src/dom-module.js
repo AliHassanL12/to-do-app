@@ -17,17 +17,21 @@ class ProjectViewer {
         for (let i = 0; i < arr.length; i++) {
             const container = document.createElement('div');
             container.classList.add('toDoContainer');
-            container.textContent = `${arr[0].title}`;
+            const title = document.createElement('p');
+            title.textContent = `${arr[0].title}`;
             const detailButton = document.createElement('button');
             detailButton.classList.add('detailButton');
             detailButton.textContent = 'Details';
-            container.appendChild(detailButton)
-            projectView.appendChild(container);
-            
+            const checkbox = document.createElement('input');
+            checkbox.setAttribute('type', 'checkbox');
+            checkbox.classList.add('checkbox');
+            projectView.appendChild(container); 
+            container.appendChild(checkbox);
+            container.appendChild(title);
+            container.appendChild(detailButton);
         }
     }
 }
-
 
 class DOMToDo {
     displayToDo() {
@@ -57,7 +61,6 @@ function createAppHeader() {
     header.appendChild(listIconImage);
 }
 
-
 function createAppContent() {
     const appContainer = document.querySelector('.container');
     const appMainContentContainer = document.createElement('div');
@@ -75,7 +78,6 @@ function createNavigationSidebar() {
     homeLink.textContent = 'Home';
     sidebar.appendChild(homeLink);
 }
-
 
 function createProjectView() {
     const appMainContentContainer = document.querySelector('.mainContentContainer');
