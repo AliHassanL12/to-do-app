@@ -17,17 +17,30 @@ class ProjectViewer {
         for (let i = 0; i < arr.length; i++) {
             const container = document.createElement('div');
             container.classList.add('toDoContainer');
+
+            const priorityStripe = document.createElement('div');
+            priorityStripe.classList.add('priorityStripe');
+
             const title = document.createElement('p');
             title.textContent = `${arr[0].title}`;
+
+            const dueDate = document.createElement('p');
+            dueDate.textContent = `${arr[0].dueDate}`;
+            dueDate.classList.add('dueDate');
+
             const detailButton = document.createElement('button');
             detailButton.classList.add('detailButton');
             detailButton.textContent = 'Details';
+
             const checkbox = document.createElement('input');
             checkbox.setAttribute('type', 'checkbox');
             checkbox.classList.add('checkbox');
+
             projectView.appendChild(container); 
+            container.appendChild(priorityStripe);
             container.appendChild(checkbox);
             container.appendChild(title);
+            container.appendChild(dueDate);
             container.appendChild(detailButton);
         }
     }

@@ -45,6 +45,7 @@ a:active {
 }
 .toDoContainer {
     display: flex;
+    position: relative;
     padding: 10px;
     background-color: #f2efef;
 }
@@ -52,5 +53,16 @@ a:active {
     margin-left: auto;
 }
 .checkbox {
-    margin-right: 10px;
+    margin-right: 30px;
+}
+.dueDate {
+    margin-left: 30px;
+}
+.priorityStripe {
+    position: absolute;
+    background-color: red;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 2px;
 }
