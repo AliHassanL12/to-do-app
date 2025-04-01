@@ -4,12 +4,12 @@ import listIconPath from '../images/list.png';
 class UserInterface {
     static createUserInterface() {
         createUserInterface();
-    }
+    };
 
     static openProjectOnUI(arr) {
         ProjectViewer.openProjectOnUI(arr);
-    }
-}
+    };
+};
 
 class ProjectViewer {
     static openProjectOnUI(arr) {
@@ -30,13 +30,13 @@ class ProjectViewer {
                 case 'low':
                     priorityStripe.classList.add('low');
                     break;
-            }
+            };
 
             const title = document.createElement('p');
-            title.textContent = `${arr[0].title}`;
+            title.textContent = `${arr[i].title}`;
 
             const dueDate = document.createElement('p');
-            dueDate.textContent = `${arr[0].dueDate}`;
+            dueDate.textContent = `${arr[i].dueDate}`;
             dueDate.classList.add('dueDate');
 
             const detailButton = document.createElement('button');
@@ -45,6 +45,7 @@ class ProjectViewer {
 
             const checkbox = document.createElement('input');
             checkbox.setAttribute('type', 'checkbox');
+            checkbox.setAttribute('id', arr[i].getID)
             checkbox.classList.add('checkbox');
 
             projectView.appendChild(container); 
@@ -53,25 +54,23 @@ class ProjectViewer {
             container.appendChild(title);
             container.appendChild(dueDate);
             container.appendChild(detailButton);
-        }
-    }
-}
 
-class DOMToDo {
-    displayToDo() {
+            attachListeners(arr)
+        };
+    };
+};
 
-    }
-}
+
 function createUserInterface() {
     createAppHeader();
     createApplication();
-}
+};
 
 function createApplication() {
     createAppContent();
     createNavigationSidebar();
     createProjectView();
-}
+};
 
 function createAppHeader() {
     const appContainer = document.querySelector('.container');
@@ -83,14 +82,14 @@ function createAppHeader() {
     listIconImage.classList.add('listIcon');
     appContainer.appendChild(header);
     header.appendChild(listIconImage);
-}
+};
 
 function createAppContent() {
     const appContainer = document.querySelector('.container');
     const appMainContentContainer = document.createElement('div');
     appMainContentContainer.classList.add('mainContentContainer');
     appContainer.appendChild(appMainContentContainer);
-}
+};
 
 function createNavigationSidebar() {
     const appMainContentContainer = document.querySelector('.mainContentContainer');
@@ -98,17 +97,24 @@ function createNavigationSidebar() {
     sidebar.classList.add('sidebar');
     appMainContentContainer.appendChild(sidebar);
 
-    const homeLink = document.createElement('a')
+    const homeLink = document.createElement('a');
     homeLink.textContent = 'Home';
     sidebar.appendChild(homeLink);
-}
+};
 
 function createProjectView() {
     const appMainContentContainer = document.querySelector('.mainContentContainer');
     const projectView = document.createElement('div');
     projectView.classList.add('projectView');
     appMainContentContainer.appendChild(projectView);
-}
+};
+
+function attachListeners(arr) {
+    const checkbox = document.querySelector('.checkbox');
+    checkbox.addEventListener('click', function() {
+        arr[checkbox.id].setToDoComplete();
+    });
+};
 
 export {
     UserInterface

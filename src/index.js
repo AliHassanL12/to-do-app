@@ -6,6 +6,5 @@ const defaultProject = new Project('default');
 const toDo = new ToDoList('Finish Dissertation', 'On optional module', new Date(2025, 6, 21), 'low');
 defaultProject.addToProject(toDo);
 
-toDo.setToDoComplete();
 UserInterface.createUserInterface();
 UserInterface.openProjectOnUI(defaultProject.listItems);
