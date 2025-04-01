@@ -48,6 +48,7 @@ a:active {
     position: relative;
     padding: 10px;
     background-color: #f2efef;
+    margin-bottom: 10px;
 }
 .detailButton {
     margin-left: auto;

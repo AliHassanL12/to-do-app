@@ -20,7 +20,7 @@ class ProjectViewer {
 
             const priorityStripe = document.createElement('div');
             priorityStripe.classList.add('priorityStripe');
-            switch(arr[0].priority) {
+            switch(arr[i].priority) {
                 case 'high':
                     priorityStripe.classList.add('high');
                     break;
@@ -54,9 +54,8 @@ class ProjectViewer {
             container.appendChild(title);
             container.appendChild(dueDate);
             container.appendChild(detailButton);
-
-            attachListeners(arr)
         };
+        attachListeners(arr)
     };
 };
 
@@ -110,10 +109,11 @@ function createProjectView() {
 };
 
 function attachListeners(arr) {
-    const checkbox = document.querySelector('.checkbox');
-    checkbox.addEventListener('click', function() {
-        arr[checkbox.id].setToDoComplete();
-    });
+    const projectView = document.querySelector('.projectView');
+    projectView.addEventListener('click', event => {
+        const targetElement = event.target;
+        console.log('work');
+    }); 
 };
 
 export {

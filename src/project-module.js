@@ -18,9 +18,6 @@ function addToProject(project, toDoList) {
     project.projectItems.push(toDoList);
 }
 
-
-
-
 export {
     Project,
 }
