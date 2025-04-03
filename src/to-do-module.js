@@ -13,7 +13,9 @@ class ToDoList {
     static count = 0; 
 
     setToDoComplete() {
-        setToDoComplete(this);
+        console.log(this.complete);
+        if (this.complete === null || this.complete === false) setToDoComplete(this);
+        console.log(this.complete)
     }
 
     changeToDoPriority() {
