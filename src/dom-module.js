@@ -43,6 +43,10 @@ class ProjectViewer {
             detailButton.classList.add('detailButton');
             detailButton.textContent = 'Details';
 
+            const deleteButton = document.createElement('button');
+            deleteButton.classList.add('deleteButton');
+            deleteButton.textContent = 'Delete';
+
             const checkbox = document.createElement('input');
             checkbox.setAttribute('type', 'checkbox');
             checkbox.setAttribute('id', arr[i].getID)
@@ -54,6 +58,7 @@ class ProjectViewer {
             container.appendChild(title);
             container.appendChild(dueDate);
             container.appendChild(detailButton);
+            container.appendChild(deleteButton);
         };
         attachListeners(arr)
     };
