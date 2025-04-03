@@ -13,9 +13,7 @@ class ToDoList {
     static count = 0; 
 
     setToDoComplete() {
-        console.log(this.complete);
-        if (this.complete === null || this.complete === false) setToDoComplete(this);
-        console.log(this.complete)
+        setToDoComplete(this);
     }
 
     changeToDoPriority() {
@@ -28,7 +26,9 @@ class ToDoList {
 }
 
 function setToDoComplete(instance) {
-    instance.complete = true;
+    if (instance.complete) instance.complete = false;
+    else instance.complete = true;
+    
 }
 
 function changeToDoPriority(instance, value) {

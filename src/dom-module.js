@@ -112,7 +112,7 @@ function attachListeners(arr) {
     const projectView = document.querySelector('.projectView');
     projectView.addEventListener('click', event => {
         const targetElement = event.target;
-        arr[targetElement.id].setToDoComplete();
+        if (targetElement.className === 'checkbox') arr[targetElement.id].setToDoComplete();
     }); 
 };
 
