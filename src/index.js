@@ -8,6 +8,6 @@ defaultProject.addToProject(toDo);
 const toDo2 = new ToDoList('Cry yourself to sleep', 'On stresses of life', new Date(2024, 3, 12), 'high');
 defaultProject.addToProject(toDo2);
 
-
+UserInterface.project = defaultProject;
 UserInterface.createUserInterface();
-UserInterface.openProjectOnUI(defaultProject.listItems);
+UserInterface.openProjectOnUI();

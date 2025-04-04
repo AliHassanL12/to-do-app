@@ -52,6 +52,7 @@ a:active {
 }
 .detailButton {
     margin-left: auto;
+    margin-right: 10px;
 }
 .checkbox {
     margin-right: 30px;

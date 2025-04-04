@@ -1,14 +1,22 @@
 import '../css/styles.css';
 import listIconPath from '../images/list.png';
 
+
 class UserInterface {
+    static currentProject = null;
+
     static createUserInterface() {
         createUserInterface();
     };
 
     static openProjectOnUI(arr) {
-        ProjectViewer.openProjectOnUI(arr);
+        ProjectViewer.openProjectOnUI(UserInterface.currentProject.listItems);
     };
+
+    static set project(newProject) {
+        UserInterface.currentProject = newProject;
+    } 
+
 };
 
 class ProjectViewer {
@@ -118,6 +126,7 @@ function attachListeners(arr) {
     projectView.addEventListener('click', event => {
         const targetElement = event.target;
         if (targetElement.className === 'checkbox') arr[targetElement.id].setToDoComplete();
+        else if (targetElement.className === 'deleteButton') arr[targetElement.id].deleteToDo();
     }); 
 };
 
