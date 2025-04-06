@@ -9,14 +9,24 @@ class UserInterface {
         createUserInterface();
     };
 
-    static openProjectOnUI(arr) {
+    static openProjectOnUI() {
         ProjectViewer.openProjectOnUI(UserInterface.currentProject.listItems);
     };
 
     static set project(newProject) {
         UserInterface.currentProject = newProject;
     } 
+    
+    static deleteToDo(index) {
+        UserInterface.currentProject.listItems.splice(index, 1);
+        UserInterface.removeDomElements();
+        UserInterface.openProjectOnUI();
+    }
 
+    static removeDomElements() {
+        const projectView = document.querySelector('.projectView');
+        projectView.textContent = '';
+    }
 };
 
 class ProjectViewer {
@@ -126,7 +136,7 @@ function attachListeners(arr) {
     projectView.addEventListener('click', event => {
         const targetElement = event.target;
         if (targetElement.className === 'checkbox') arr[targetElement.id].setToDoComplete();
-        else if (targetElement.className === 'deleteButton') arr[targetElement.id].deleteToDo();
+        else if (targetElement.className === 'deleteButton') UserInterface.deleteToDo(targetElement.id);
     }); 
 };
 
