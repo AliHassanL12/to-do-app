@@ -18,14 +18,14 @@ class UserInterface {
     } 
     
     static deleteToDo(index) {
+        console.log(index);
         UserInterface.currentProject.listItems.splice(index, 1);
         UserInterface.removeDomElements();
         UserInterface.openProjectOnUI();
     }
 
     static removeDomElements() {
-        const projectView = document.querySelector('.projectView');
-        projectView.textContent = '';
+        removeDomElements();
     }
 };
 
@@ -138,6 +138,13 @@ function attachListeners(arr) {
         if (targetElement.className === 'checkbox') arr[targetElement.id].setToDoComplete();
         else if (targetElement.className === 'deleteButton') UserInterface.deleteToDo(targetElement.id);
     }); 
+};
+
+function removeDomElements() {
+    const projectView = document.querySelector('.projectView');
+    while (projectView.firstChild) {
+        projectView.removeChild(projectView.lastChild);
+    };
 };
 
 export {
