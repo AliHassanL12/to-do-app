@@ -1,7 +1,6 @@
 import '../css/styles.css';
 import listIconPath from '../images/list.png';
-
-
+import { Project } from './project-module.js';
 class UserInterface {
     static currentProject = null;
 
@@ -25,7 +24,7 @@ class UserInterface {
     }
 
     static removeDomElements() {
-        removeDomElements();
+        removeDomElements(UserInterface.currentProject);
     }
 };
 
@@ -63,6 +62,7 @@ class ProjectViewer {
 
             const deleteButton = document.createElement('button');
             deleteButton.classList.add('deleteButton');
+            deleteButton.setAttribute('id', arr[i].getID)
             deleteButton.textContent = 'Delete';
 
             const checkbox = document.createElement('input');
@@ -140,11 +140,10 @@ function attachListeners(arr) {
     }); 
 };
 
-function removeDomElements() {
+function removeDomElements(currentProject) {
     const projectView = document.querySelector('.projectView');
-    while (projectView.firstChild) {
-        projectView.removeChild(projectView.lastChild);
-    };
+    projectView.textContent = '';
+    currentProject.resetID();
 };
 
 export {

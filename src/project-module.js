@@ -9,13 +9,26 @@ class Project {
     }
 
     get listItems() {
-        console.log(this.projectItems)
         return this.projectItems;
+    }
+
+    resetID() {
+        resetID(this);
     }
 }
 
 function addToProject(project, toDoList) {
     project.projectItems.push(toDoList);
+}
+
+function resetID(instance) {
+    for (let i = 0; i < instance.listItems.length; i++) {
+        const arr = instance.listItems;
+
+        // this is not a function!! Arr[i] never has a function setID
+        instance.listItems[i].setID(i);
+        console.log(instance.listItems[i].getID);
+    }
 }
 
 

@@ -7,10 +7,9 @@ class ToDoList {
         this.dueDate = format(dueDate, 'dd-MM-yyyy'); 
         this.priority = priority;
         this.complete = null;
-        this.id = ToDoList.count++;
     }
 
-    static count = 0; 
+    id = null; 
 
     setToDoComplete() {
         setToDoComplete(this);
@@ -23,7 +22,11 @@ class ToDoList {
     get getID() {
         return this.id;
     }
-}
+
+    set setID(value) {
+        this.id = value;
+    }
+ }
 
 function setToDoComplete(instance) {
     if (instance.complete) instance.complete = false;
