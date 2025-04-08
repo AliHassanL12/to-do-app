@@ -1,3 +1,4 @@
+import { ToDoList } from "./to-do-module";
 class Project {
     constructor(name) {
         this.name = name;
@@ -24,9 +25,7 @@ function addToProject(project, toDoList) {
 function resetID(instance) {
     for (let i = 0; i < instance.listItems.length; i++) {
         const arr = instance.listItems;
-
-        // this is not a function!! Arr[i] never has a function setID
-        instance.listItems[i].setID(i);
+        instance.listItems[i].setID = i;
         console.log(instance.listItems[i].getID);
     }
 }
