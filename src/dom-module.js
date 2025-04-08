@@ -9,6 +9,7 @@ class UserInterface {
     };
 
     static openProjectOnUI() {
+        UserInterface.currentProject.resetID();
         ProjectViewer.openProjectOnUI(UserInterface.currentProject.listItems);
     };
 

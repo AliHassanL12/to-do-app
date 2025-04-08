@@ -26,8 +26,7 @@ function resetID(instance) {
     for (let i = 0; i < instance.listItems.length; i++) {
         const arr = instance.listItems;
         instance.listItems[i].setID = i;
-        console.log(instance.listItems[i].getID);
-    }
+    };
 }
 
 
